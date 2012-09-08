@@ -1,0 +1,16 @@
+.block {
+    display: block;   
+}
+
+textarea.fd-text, span.fd-text {
+    font-family: Sans-serif;
+    font-size: 14px;
+}
+
+textarea.fd-text {
+    overflow: auto;
+}
+
+span.fd-text:hover {
+    background: #ffefd5;       
+}
