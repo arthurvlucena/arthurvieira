@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains>
+	<domain name="noticia" text="Noticia" attrNum="3">
+		<attr name="id" id="true" required="false" type="int"/>
+		<attr name="titulo" id="false" required="true" type="string"/>
+		<attr name="conteudo" id="false" required="false" type="string"/>
+	</domain>
+	
+	<domain name="microBlog" text="Micro Blog" attrNum="4">
+		<attr name="id" id="true" required="false" type="int"/>
+		<attr name="titulo" id="false" required="true" type="string"/>
+		<attr name="conteudo" id="false" required="false" type="string"/>
+		<attr name="tags" id="false" required="false" type="string"/>
+		<attr name="data" id="false" required="false" type="date"/>
+	</domain>
+</domains>

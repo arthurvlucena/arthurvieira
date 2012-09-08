@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains>
+	<domain db="TAB_PONTO" ui="ponto">
+		<attr db="ID_TAB_PONTO" ui="id" type="int(12)" />
+		<attr db="DT_DATA" ui="data" type="date" />
+		<attr db="DT_HORARIO" ui="horario" type="time" />
+		<attr db="DES_SENTIDO" ui="sentido" type="varchar(1)" />
+		<attr db="PATH_FOTO" ui="path" type="varchar(511)" />
+		<attr db="DT_ALTERACAO" ui="alteracao" type="timestamp" />
+	</domain>
+	
+	<domain db="TAB_FAVORITO" ui="favorito">
+		<attr db="ID_TAB_FAVORITO" ui="id" type="int(12)" />
+		<attr db="DES_NOME" ui="nome" type="varchar(255)" />
+		<attr db="DES_FAVORITO" ui="descricao" type="varchar(511)" />
+		<attr db="DES_PRIORIDADE" ui="prioridade" type="varchar(1)" />
+	</domain>
+	
+	<domain db="TAB_URL" ui="url">
+		<attr db="ID_TAB_URL" ui="id" type="int(12)" />
+		<attr db="DES_LINK" ui="link" type="varchar(511)" />
+	</domain>
+</domains>

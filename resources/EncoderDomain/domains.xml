@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domains>
+	<domain db="TAB_NOTICIA" ui="noticia">
+		<attr db="ID_TAB_NOTICIA" ui="id" type="int(12)" />
+		<attr db="DES_TITULO" ui="titulo" type="varchar(511)" />
+		<attr db="DES_CONTEUDO" ui="conteudo" type="varchar(65535)" />
+		<attr db="PATH_FOTO" ui="foto" type="varchar(1023)" />
+		<attr db="DES_TAGS" ui="tags" type="varchar(1023)" />
+		<attr db="DAT_NOTICIA" ui="datanoticia" type="timestamp" />
+	</domain>
+	
+	<domain db="TAB_SERVICO" ui="servico">
+		<attr db="ID_TAB_SERVICO" ui="id" type="int(12)" />
+		<attr db="DES_MIN_SERVICO" ui="minidescricao" type="varchar(255)" />
+		<attr db="DES_SERVICO" ui="descricao" type="varchar(255)" />
+		<attr db="DAT_SERVICO" ui="datetimestamp" type="timestamp" />
+	</domain>
+	
+	<domain db="TAB_USER" ui="user">
+		<attr db="ID_TAB_USUARIO" ui="id" type="int(12)" />
+		<attr db="SENHA" ui="senha" type="varchar(255)" />
+	</domain>
+</domains>

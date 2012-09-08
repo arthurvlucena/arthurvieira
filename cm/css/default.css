@@ -1,0 +1,133 @@
+/*GLOBAL*/
+* {
+	margin:0px;
+	padding:0px;
+	outline:none;
+}
+body {
+	font:62.5% 'Helvetica', sans-serif;
+	text-decoration: none;
+    color:#555;
+    background-color: #fff;
+}
+p {
+	font-size:1.2em; 
+}
+th {
+	font-size:1.3em;
+	font-weight:bold;	
+}
+td {
+	font-size:1.2em;
+}
+table {
+	margin:20px;	
+}
+/* Estrutura */ 
+#wrapper {
+	width:910px;
+	margin:0 auto;
+	
+}
+#header{
+	height:150px;
+	/*background-image:url(../images/topo.png);*/
+	background-color:#333;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+#nav {
+	background-color:#333;
+}
+#content {
+	padding:10px 5px 15px 5px;
+	border-left:1px solid #cacaca;
+	border-right:1px solid #cacaca;
+}
+#footer {
+	height:60px;
+	background-color:#333;
+	text-align:center;
+	clear:both;
+}
+/* Menu */
+.nav-menu {
+	list-style-type:none;
+}
+.nav-li {
+	font-size:2.3em;
+	font-family:'RalewayThin';
+	font-weight:100;
+	letter-spacing:2px;
+	display:inline;
+	border-left:1px solid #ddd;
+	border-right:1px solid #7f7f7f;
+}
+.nav-li:first-child {
+	border-left:none;
+}
+.nav-li:last-child {
+	border-right:none;	
+}
+.nav-link {
+	text-decoration:none;
+	color:#fff;
+	padding:0px 3px 0px 3px;
+	transition: all 0.25s linear;
+    -moz-transition: all 0.2s linear;
+    -khtml-transition: all 0.2s linear;
+}
+.nav-link:hover {
+	background-color:#fff;
+	color:#000;
+	cursor: pointer;
+}
+/* Outros */
+#footer > p {
+	color:#aaa;
+	font-size:1.2em;
+}
+/*content helpers*/
+.post-link{
+	color:blue;
+	text-decoration:underline;
+	cursor:pointer;
+}
+.post-text{
+	text-align:left;
+	display:block; 
+	margin:5px 0px 0px 10px;
+}
+.header{
+	color:white;
+	text-align:center;
+	font-size:2em;
+	background-color:red;
+}
+.box{
+	border:1px solid #666;
+}
+.box-on-top{
+	margin-top:15px;
+}
+.box-on-mid{
+	margin-top:10px;
+}
+.box-inside{
+	margin:5px;
+}
+.label-vet{
+	margin-top:10px;
+}
+.label-mini{
+	font-size:0.95em; 
+}
+.input-text{
+	margin-top:5px;
+}
+.text-area{
+	margin-top:10px;
+}
+.validation-class{
+	background-color:#ffcfcf !important;
+}

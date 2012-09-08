@@ -1,0 +1,117 @@
+form {
+    padding:15px;
+    border:1px solid #ddd;
+}
+/*input / textarea*/
+input[type=text], input[type=date], textarea {
+    font: 1.2em 'Ubuntu', sans-serif;
+    color: #666;
+    padding:3px;
+    border:1px solid #ddd;
+    background-color:#fafafa;
+    outline: none;
+    /*css3*/
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -khtml-border-radius:3px;
+    box-shadow:inset 1px 1px 1px #aaa;
+    -moz-box-shadow:inset 1px 1px 1px #aaa;
+    -khtml-box-shadow:inset 1px 1px 1px #aaa;
+}
+textarea:hover, input[type=text]:hover, input[type=date]:hover {
+    border-color:#c5c5c5;
+    background:#f4f4f4;
+}
+textarea:focus, input[type=text]:focus, input[type=date]:hover {
+    border-color:#999;
+    background:#f4f4f4;
+}
+input[type=text]:disabled, textarea:disabled, input[type=date]:hover {
+    border-color:#cfcfcf;
+    background-color:#efefef;
+    color:#999;
+    /*css3*/
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -khtml-box-shadow:none;
+}
+/*textarea*/ 
+textarea {
+    resize:none;
+    overflow:auto;
+}
+/*button*/
+input[type=button], input[type=submit]{
+    font:600 1.2em 'Helvetica', sans-serif;
+    letter-spacing:0px;
+    line-height:14px;
+    color:#888;
+    border:1px solid #bbb;
+    background-color:#ddd;
+    padding:4px;
+    text-align: center;
+    outline: none;
+    /*css3*/
+    text-shadow:#fff 1px 0px 0px;
+    -moz-text-shadow:#fff 2px 0px 0px;
+    -khtml-text-shadow:#fff 2px 0px 0px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    box-shadow:inset 1px 1px 3x #fff;
+    -moz-box-shadow:inset 1px 1px 3px #fff;
+    -khtml-box-shadow:inset 1px 1px 3px #fff;
+    transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -khtml-transition: all 0.25s linear;
+}
+input[type=button]:hover:enabled, input[type=submit]:hover:enabled {
+    color:#333;
+    border-color:#888;
+    background-color:#e5e5e5;
+    box-shadow:0 1px 1px rgba(0,0,0,0.1);
+}
+input[type=button]:disabled, input[type=submit]:disabled {
+    border-color:#aaa;
+    background-color:#ccc;
+}
+input[type=button]:hover:enabled, input[type=submit]:hover:enabled/*, input[type=button]:focus:enabled*/ {
+    color: #555;
+    /*css3*//*
+    box-shadow:inset 1px 1px 1px #555;
+    -moz-box-shadow:inset 1px 1px 1px #555;
+    -khtml-box-shadow:inset 1px 1px 1px #555;*/
+}
+input[type=button]:disabled {
+    color:#aaa;
+}
+/*number*/
+
+/*file*/
+
+/*label*/
+label {
+    font-size:1.4em;
+}
+/*select*/
+select {
+    font:1.3em 'Ubuntu', sans-serif;
+    color:#666;
+    border:1px solid #c5c5c5;
+    background:#f4f4f4;
+    outline: none;
+    /*css3*/
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -khtml-border-radius:2px;
+}
+select:disabled {
+    color:#aaa;
+    border-color:#ddd;
+    background-color:#ededed;
+}
+/*option*/
+option {
+    font:1.3em 'Ubuntu', sans-serif;
+    color:#666;
+}

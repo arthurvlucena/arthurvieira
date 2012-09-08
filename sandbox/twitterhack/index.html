@@ -1,0 +1,23 @@
+<html>
+	<head>		
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+		<style href="http://ajax.googleapis.com/ajax/libs/dojo/1.7.1/dijit/themes/claro/claro.css"></style>
+		<style href="style.css"></style>
+		<script src="script.js"></script>
+	</head>
+
+	<body class="claro">
+		<div id="main" style="display: none;">
+
+			<button dojoType="dijit.form.Button" id="loadBtn">Load Tweets</button>
+
+			<div id="userDialog" dojoType="dijit.Dialog" title="Enter a twitter account">
+				Twitter user: <input type="text" value="dojo" dojoType="dijit.form.ValidationTextBox" required="true" id="userTxt">
+				<button dojoType="dijit.form.Button" id="okBtn">Ok</button>    
+			</div>
+			
+			<div id="output"></div>
+
+		</div>
+	</body>
+</html>

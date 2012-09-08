@@ -1,0 +1,32 @@
+<style>
+.cellBody {border: 2px solid #EDD;}
+.data-grid > tbody > tr:hover {background-color: #DCDCDC;}
+.action-table {width: 16px;}
+.table-header {background-color: #EDD}
+.delete-class {cursor: pointer;}
+</style>
+
+<form id="mainForm">
+	<p>Codigo:</p><input id="id" name="id" type="text" style="width: 40px; display: block;" disabled />
+	<p>Titulo:</p><input id="titulo" name="titulo" type="text" style="width: 200px; display: block;" />
+	<p>Noticia:</p><textarea id="conteudo" name="conteudo" style="width: 350px; height: 100px; display: block;" ></textarea>
+	
+	<input id="save" type="button" style="display: inline; margin-top: 10px;" value="Salvar" />
+	<input id="search" type="button" style="display: inline; margin-top: 10px;" value="Pesquisar" />
+	<input id="new" type="button" style="display: inline; margin-top: 10px;" value="Novo" />
+</form>	
+	
+<div align="center">
+	<table class="data-grid" style="background-color: #FEE; border: 3px solid #EDD; width: 95%; border-collapse: collapse; padding: 0;">
+		<thead class="table-header">
+			<tr>
+				<th>Codigo</th>
+				<th>Titulo</th>
+				<th>Conteudo</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+	</table>
+</div>
+
+<script type="text/javascript" src="js/source/link-alpha.js"></script>

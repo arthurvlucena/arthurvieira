@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /mobile
+Disallow: /cm
+Disallow: /resources
+Allow: /
+Allow: /site
+

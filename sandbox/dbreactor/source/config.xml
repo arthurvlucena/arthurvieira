@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<DbConfig>
+		<DataBase>
+			<nameDatabase>localMySQL1</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>localhost</url>
+			<dataBase>paraibar_bd1</dataBase>
+			<user>root</user>
+			<passwd></passwd>
+			<port></port>
+		</DataBase>
+		
+		<DataBase>
+			<nameDatabase>localMySQL1Select</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>localhost</url>
+			<dataBase>paraibar_bd1</dataBase>
+			<user>select</user>
+			<passwd></passwd>
+			<port></port>
+		</DataBase>
+		
+		<DataBase>
+			<nameDatabase>localMySQL2</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>localhost</url>
+			<dataBase>testAjax2</dataBase>
+			<user>root</user>
+			<passwd></passwd>
+			<port></port>
+		</DataBase>
+		
+		<DataBase>
+			<nameDatabase>paraibarMySQL1</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>174.142.48.58</url>
+			<dataBase>paraibar_bd1</dataBase>
+			<user>paraibar_user1</user>
+			<passwd>paraibar_user1</passwd>
+			<port></port>
+		</DataBase>
+		
+		<DataBase>
+			<nameDatabase>paraibarMySQLSelect</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>174.142.48.58</url>
+			<dataBase>paraibar_bd1</dataBase>
+			<user>paraibar_user0</user>
+			<passwd>user0xm566</passwd>
+			<port></port>
+		</DataBase>
+		
+		<DataBase>
+			<nameDatabase>UtilTron</nameDatabase>
+			<sqlLang>mysql</sqlLang>
+			<url>localhost</url>
+			<dataBase>arthur_util</dataBase>
+			<user>arthur_tron</user>
+			<passwd>sport1000</passwd>
+			<port></port>
+		</DataBase>
+<!-- 		
+		<DataBase>
+			<nameDatabase>localPostgreSQL</nameDatabase>
+			<sqlLang>postgres</sqlLang>
+			<url>127.0.0.1</url>
+			<dataBase>vlabs</dataBase>
+			<user>postgres</user>
+			<passwd>bilcra56*</passwd>
+			<port>5432</port>
+		</DataBase> 
+-->
+	</DbConfig>
+</config>

@@ -1,0 +1,98 @@
+/** Ações que bloqueiam diretamente a experiencia do usuario **/
+#xm-overlay-div { 
+	position:absolute; 
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:501;
+	display:none;
+}
+#mx-overlay-div-background {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color:#ccc;
+    opacity:0.60;
+	filter:Alpha(Opacity=60);
+	z-index:502;
+}
+#xm-loading-sync {
+	display:none;	
+}
+#xm-loading-sync-gif {
+	position:absolute;
+	top:35%;
+	left:50%;
+	margin-top:-50px; 
+	margin-left:-50px;
+	border:5px solid #999;
+	opacity:0.80;
+	filter:Alpha(Opacity=80);
+	z-index:503;
+	/*css3*/
+	border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+}
+#xm-alert {
+	display:none;
+	position:absolute;
+	top:35%;
+	left:50%;
+	height:130px;
+	width:250px;
+	margin-top: -65px; 
+	margin-left: -125px;
+    background-color:#000;
+    border:5px solid #ccc;
+    opacity:0.80;
+	filter:Alpha(Opacity=80);
+	z-index:503;
+	/*css3*/
+	border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+}
+#xm-alert-msg {
+	font:1.3em 'Ubuntu', sans-serif;
+	color:#fff;
+	height:75px;
+	margin:10px;
+	overflow:auto;
+}
+#xm-alert-ok {
+	position:relative;
+	left:50%;
+	width:30px;
+	margin-left:-15px;
+	margin-top:5;
+}
+#xm-confirm {
+	display:none;	
+}
+/** Ações que não bloqueiam diretamente a experiencia do usuario **/
+
+#xm-loading-async {
+	left:50%;
+	margin-left:-10px;
+}
+
+#xm-error-msg {
+	width:600px;
+	left:50%;
+	margin-left:-300px;
+}
+
+#xm-loading-async, #xm-error-msg {
+	display:none;	
+	position:absolute;
+	z-index:1;
+	padding:3px 6px 10px 6px;
+	background-color:#000;
+	border:2px solid #878787; 
+	border-top:0px;
+	color: #fff;
+	font-size: 1.2em;
+}

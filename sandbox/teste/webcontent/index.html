@@ -1,0 +1,306 @@
+<DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii" />
+
+  <title>.:AUDIO IMPORT ONLINE:.</title>
+  <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen" />
+</head>
+
+<body topmargin="0" class="fundo">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody>
+      <tr>
+        <td>
+          <div align="center">
+            <table style="border-left-style: dotted; border-right-style: dotted;" border=
+            "1" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0" width="700">
+              <tbody>
+                <tr>
+                  <td style=
+                  "border-left: 1px dotted rgb(0, 0, 0); border-right: 1px dotted rgb(0, 0, 0); border-width: 1px;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="760">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <p align="center"><img src="teste_arquivos/LOGO.jpg" border=
+                            "0" height="70" width="700" /></p>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td><img src="teste_arquivos/barra.htm" border="0" height="2"
+                          width="100%" /></td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <ul class="sf-menu sf-js-enabled sf-shadow">
+                              <li class="current"><a href=
+                              "http://localhost/winaudio/Principal.php">Início</a></li>
+
+                              <li class="current">
+                                <a class="sf-with-ul" href="#">Cadastro <span class=
+                                "sf-sub-indicator">&#194;&#187;</span></a>
+
+                                <ul style="display: none; visibility: hidden;">
+                                  <li><a href=
+                                  "http://localhost/winaudio/cadsetor.php">Setor</a><a href="http://localhost/winaudio/cadunidade.php">Unidade</a><a href="http://localhost/winaudio/cadmodulo.php">M&#195;&#179;dulos</a></li>
+                                </ul>
+                              </li>
+
+                              <li class="current"><a href="#">Consulta</a></li>
+
+                              <li class="current"><a href=
+                              "#">Permissão</a></li>
+
+                              <li class="current"><a href=
+                              "#">Jurídico</a></li>
+
+                              <li class="current"><a href="#">Estoque</a></li>
+
+                              <li class="current"><a href="#">Faturamento</a></li>
+
+                              <li class="current"><a href="#">Financeiro</a></li>
+
+                              <li class="current"><a href="#">Pedidos</a></li>
+
+                              <li class="current"><a href="#">OCA</a></li>
+
+                              <li class="current"><a href="#">OFM</a></li>
+
+                              <li class="current"><a href="#">Suporte</a></li>
+
+                              <li class="current"><a href="#">RH</a></li>
+
+                              <li class="current"><a href=
+                              "#">Relatórios</a></li>
+
+                              <li class="current"><a href=
+                              "#">Parâmetro</a></li>
+
+                              <li class="current">
+                                <a class="sf-with-ul" href="#">Links <span class=
+                                "sf-sub-indicator">&#194;&#187;</span></a>
+
+                                <ul style="display: none; visibility: hidden;">
+                                  <li><a href=
+                                  "http://www.winaudio.com.br/">WinAudio</a></li>
+                                </ul>
+                              </li>
+
+                              <li class="current"><a href="http://localhost/winaudio/logout.php">Sair</a></li>
+                            </ul>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td></td>
+                        </tr>
+
+                        <tr>
+                          <td></td>
+                        </tr>
+
+                        <tr>
+                          <td> Usuário logado:Daniel Fernandes Ip: 127.0.0.1</td>
+                        </tr>
+
+                        <tr>
+                          <td> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div align="center">
+    <table border="1" cellpadding="0" cellspacing="0" width="759">
+      <tbody>
+        <tr>
+          <td>
+            <div align="center">
+              <!-- table do cabeÃ§alho de cadastro -->
+
+              <table style="border-collapse: collapse;" border="1" bordercolor="#111111"
+              cellpadding="0" cellspacing="0" width="758">
+                <tbody>
+                  <tr>
+                    <td colspan="5" bgcolor="#192F02" height="21">
+						<font color="#FFFFFF">
+						<span style="font-size: 8pt; font-weight:700">Cadastro de setor</span>
+						</font>
+					</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table border="0">
+                <tbody>
+                  <tr>
+                    <td> </td>
+                  </tr>
+                </tbody>
+              </table><!-- table dos dados de cadastro -->
+
+              <table style="border-collapse: collapse;" border="0" bordercolor="#111111"
+              cellpadding="0" cellspacing="0" width="758">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div align="center">
+                        <!--  DADOS DE CADASTRO -->
+                        <!--  table dos dados -->
+						
+						<form id="formSetor">
+                        <table border="0">
+                          <tbody>
+                            <tr>
+                              <td><font color="#FF0000">* </font>Sigla:</td>
+                              <td><input size="50" required="required" placeholder="Digite aqui a sigla do setor" name="sigla" id="sigla" maxlength="5" class="inputi2" type="text" /></td>
+                            </tr>
+							
+                            <tr>
+                              <td><font color="#FF0000">* </font>Setor:</td>
+                              <td><input size="50" required="required" placeholder="Digite aqui o nome do setor" name="descricao" id="descricao" maxlength="100" class="inputi2" type="text" /></td>
+                            </tr>
+
+                            <tr>
+                              <td></td>
+
+                              <td>
+								<input id="ativo" name="ativo" value="1"  type="checkbox" /><label for="ativo">Ativo</label>
+							  </td>
+                            </tr>
+                          </tbody>
+                        </table>
+						</form>
+						
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table><!-- barra de botoes -->
+
+              <table style="border-collapse: collapse;" border="0" bordercolor="#111111"
+              cellpadding="0" cellspacing="0" width="758">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div align="center">
+                        <input value="Limpar" id="btnReset" name="btnReset" type="button" /> 
+						<input value="Pesquisar" id="btnPesquisar" name="btnPesquisar" type="button" /> 
+						<input value="Novo" id="btnNovo" name="btnNovo" type="button" /> 
+						<input value="Salvar" id="btnSalvar" name="btnSalvar" type="button" />
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table style="border-collapse: collapse;" border="0" bordercolor="#111111'"
+              cellpadding="0" cellspacing="0" width="758">
+                <tbody>
+                  <tr>
+                    <td>
+                      <div align="center">
+                        &nbsp;
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table style="border-collapse: collapse;" border="1" bordercolor="#111111"
+              cellpadding="0" cellspacing="0" width="758">
+                <tbody>
+                  <tr>
+                    <td colspan="5" bgcolor="#192F02" height="21"><font color=
+                    "#FFFFFF"><span style="font-size: 8pt; font-weight:700">Administrar
+                    Setores Cadastrados</span></font></td>
+                  </tr>
+                </tbody>
+              </table><!-- table do grid -->
+
+              <table style="border-collapse: collapse;" border="0" bordercolor="#111111"
+              cellpadding="1" cellspacing="1">
+                <tbody>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table style="border-collapse: collapse;" border="1" bordercolor="#111111"
+              cellpadding="1" cellspacing="1" width="758">
+                <thead>
+					<tr>
+						<td align="center" bgcolor="#FFFFFF" height="22"><font face="Calibri"
+						size="2"><b>Setor</b></font></td>
+
+						<td align="center" bgcolor="#FFFFFF" height="22"><font face="Calibri"
+						size="2"><b>Sigla</b></font></td>
+
+						<td align="center" bgcolor="#FFFFFF" height="22"><font face="Calibri"
+						size="2"><b>Situação</b></font></td>
+
+						<td width="16"></td>
+
+						<td width="16"></td>
+					</tr>
+					
+					<tfoot>
+						<tr>
+						  <td id="tabela-setor-tfoot" colspan="5" style="text-align:center;"></td>
+						</tr>
+					</tfoot>
+				</thead>
+				
+				<tbody id="tabela-setor-tbody">
+                  
+                </tbody>
+              </table>
+
+              <table style="border-collapse: collapse;" border="0" bordercolor="#111111"
+              cellpadding="1" cellspacing="1">
+                <tbody>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div align="center">
+    <table style="border-collapse: collapse;" border="1" bordercolor="#111111"
+    cellpadding="0" cellspacing="0" width="758">
+      <tbody>
+        <tr>
+          <td bgcolor="#192F02">
+            <div align="center">
+              <font color="#FFFFFF">Audio Import Online</font>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script type="text/javascript" src="js/jquery-1.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+<script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

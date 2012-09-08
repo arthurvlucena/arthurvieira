@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE project>
+<project name="arthurvieira Builder" default="Create publish folder" basedir="../">
+
+	<target name="Create publish folder">
+		<echo>Publishing folders of deploy</echo>
+		<mkdir dir="${basedir}/publish" />
+
+		<mkdir dir="${basedir}/publish/site" />
+		<mkdir dir="${basedir}/publish/cm" />
+		<mkdir dir="${basedir}/publish/resources" />
+
+		<copy todir="${basedir}/publish/site">
+			<fileset dir="${basedir}/site"/>
+		</copy>
+
+		<copy todir="${basedir}/publish/cm">
+			<fileset dir="${basedir}/cm"/>
+		</copy>
+
+		<copy todir="${basedir}/publish/resources">
+			<fileset dir="${basedir}/resources"/>
+		</copy>
+	</target>
+	
+	<target name="Create publish folder - BLOG">
+		<echo>Publishing folders of deploy for blog</echo>
+		<mkdir dir="${basedir}/blog_deploy" />
+
+		<copy todir="${basedir}/blog_deploy">
+			<fileset dir="${basedir}/blog"/>
+		</copy>
+	</target>
+
+	<target name="Delete publish folder">
+		<echo>Deleting folders of deploy</echo>
+
+		<delete includeEmptyDirs="true">
+			<fileset dir="${basedir}/publish"/>
+		</delete>
+		
+		<delete file="${basedir}/deploy.zip" />
+	</target>
+	
+	<target name="Delete publish folder BLOG">
+		<echo>Deleting folders of deploy for blog</echo>
+
+		<delete includeEmptyDirs="true">
+			<fileset dir="${basedir}/blog_deploy"/>
+		</delete>
+		
+		<delete file="${basedir}/blog_deploy.zip" />
+	</target>
+	
+	<target name="Create publish zip folder">
+		<echo>Zip folders of deploy</echo>
+
+		<zip destfile="${basedir}/deploy.zip" basedir="${basedir}/publish" /> 
+	</target>
+	
+	<target name="Create publish zip folder BLOG">
+		<echo>Zip folders of deploy blog</echo>
+
+		<zip destfile="${basedir}/blog_deploy.zip" basedir="${basedir}/blog_deploy" /> 
+	</target>
+</project>
