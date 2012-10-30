@@ -1,170 +1,130 @@
 (function($) {
+// funções de tela
+// add tamanho fixo para tabela, e mostrar o excedente por hinttext
+var sqlCanvas = $('#sql-canvas');
+var newTableHtml = '<div id="#ID" class="sql-table">' + '<div class="sql-table-title"><span class="fd-text-title">#NAMETABLE</span> <div class="sql-table-title-close">X</div></div>' + '<div class="sql-table-rows"></div>' + '<div class="sql-table-add-row">+</div>' + '<div class="sql-table-data"></div>' + '</div>';
+var newRowHtml = '<div id="row-#ID-#IDTABLE" class="sql-table-row"><span class="fd-text-row">New Row</span></div>';
+var tableCount = 0;
 
-	function SqlRow() {
-		var nameRow;
-		var type;
-		var primaryKey;
+var centerL = (sqlCanvas.css('width').replace('px', '') / 2) + sqlCanvas.offset().left;
+var centerT = (sqlCanvas.css('height').replace('px', '') / 2) + sqlCanvas.offset().top;
 
-		SqlRow.prototype.setNameRow = function(_nameRow) {
-			this.nameRow = _nameRow;
-		}
+var getDataFromTable = function(tableId) {
+    return eval('(' + $('#' + tableId + ' > .sql-table-data').html() + ')');
+};
 
-		SqlRow.prototype.getNameRow = function() {
-			return this.nameRow;
-		}
-	}
+// botões
+$('#add-table').click(function() {
+    tableCount = tableCount + 1;
 
-	function SqlTable() {
-		var id;
-		var nameTable;
-		var rows;
+    var id = 'table-' + tableCount;
+    var name = 'New Table ' + tableCount;
 
-		SqlTable.prototype.byJson = function(json) {
-			this.id = json.id;
-			this.nameTable = json.nameTable;
+    var htmlTemp = newTableHtml.replace('#ID', id).replace('#NAMETABLE', name);
 
-			if (json.rows) {
-				this.rows = json.rows;
-			} else {
-				this.rows = new Array();
-			}
+    sqlCanvas.append(htmlTemp);
 
-			return this;
-		}
+    $('#' + id).offset({
+        top: centerT,
+        left: centerL
+    });
 
-		SqlTable.prototype.setId = function(_id) {
-			this.id = _id;
-		}
+    $('#' + id).draggable({
+        snap: true,
+        grid: [10, 10]
+    });
 
-		SqlTable.prototype.getId = function() {
-			return this.id;
-		}
+    var table = new SqlTable();
+    table.setId(id);
+    table.setNameTable(name);
 
-		SqlTable.prototype.setNameTable = function(_nameTable) {
-			this.nameTable = _nameTable;
-		}
+    $('#' + id + ' > .sql-table-data').append(JSON.stringify(table));
 
-		SqlTable.prototype.getNameTable = function() {
-			return this.nameTable;
-		}
+    var closeButton = $('#' + id + ' > div.sql-table-title > div.sql-table-title-close');
 
-		SqlTable.prototype.setRows = function(_rows) {
-			this.rows = _rows;
-		}
+    $('.fd-text-title').fdText(function(slt) {
+        closeButton.hide();
+    }, function(slt) {
+        var tableData = getDataFromTable(id);
+        var tableSQL = new SqlTable().byJson(tableData);
+        tableSQL.setNameTable($(slt).html());
 
-		SqlTable.prototype.addRow = function(row) {
-			if (!this.rows) {
-				this.rows = new Array();
-			}
+        $('#' + id + ' > .sql-table-data').html(JSON.stringify(tableSQL));
 
-			this.rows.push(row);
-		}
+        closeButton.show();
+    });
+});
 
-		SqlTable.prototype.getRows = function() {
-			return this.rows;
-		}
-	}
+$("#gen-sql").click(function() {
+    var tables = sqlCanvas.children();
 
-	// gerador de sqls mysql visual
+    for (var i = 0, length = tables.size(); i < length; i++) {
+        var table = getDataFromTable(tables[i].id);
 
-	var coluna1 = new SqlRow();
-	coluna1.setNameRow("coluna_teste_1");
+        console.log(table);
 
-	var tabela = new SqlTable();
-	tabela.setNameTable("tabela1");
-	tabela.addRow(coluna1);
+        var sql = 'CREATE TABLE ' + table.nameTable + ' ( \n';
+        var sqlRow = '';
 
-	// console.log(tabela);
+        for (var j = 0, lengthj = table.rows.length; j < lengthj; j++) {
+            if (sqlRow != '') {
+                sqlRow += ', \n'
+            }
 
-	// funções de tela
-	// add tamanho fixo para tabela, e mostrar o excedente por hinttext
-	var sqlCanvas = $('#sql-canvas');
-	var newTableHtml = 
-	'<div id="#ID" class="sql-table">' + 
-	'<div class="sql-table-title">#NAMETABLE <div class="sql-table-title-close">X</div></div>' + 
-	'<div class="sql-table-rows"></div>' + 
-	'<div class="sql-table-add-row">+</div>' + 
-	'<div class="sql-table-data"></div>' + 
-	'</div>';
-	
-	var newRowHtml = '<div class="sql-table-row">New Rows</div>'
-	
-	var tableCount = 0;
-	var listTableObj = new Array();
+            var row = table.rows[j];
+            sqlRow += row.nameRow;
+        }
 
-	var centerL = (sqlCanvas.css('width').replace('px', '') / 2) + sqlCanvas.offset().left;
-	var centerT = (sqlCanvas.css('height').replace('px', '') / 2) + sqlCanvas.offset().top;
+        var resultSql = sql + sqlRow + ')';
 
-	var unselectTables = function() {
-		$('#sql-canvas > .sql-table-selected').removeClass('sql-table-selected');
-	};
+        console.log(resultSql);
+    }
+});
 
-	var getDataFromTable = function(tableId) {
-		return $('#' + tableId + ' > .sql-table-data').html();
-	};
+// botões table
+$('.sql-table-title-close').live('click', function() {
+    $(this).parent().parent().remove();
+});
 
-	$('#add-table').click(function() {
-		unselectTables();
-		var htmlTemp = newTableHtml;
-		tableCount = tableCount + 1;
+$('.sql-table-add-row').live('click', function() {
+    var table = $($($(this).parent()));
+    var tableId = table.attr('id');
 
-		var id = 'table-' + tableCount;
-		var name = 'New Table ' + tableCount;
+    var rowsCanvas = $('#' + tableId + ' > .sql-table-rows');
+    var tableData = getDataFromTable(tableId);
 
-		htmlTemp = htmlTemp.replace('#ID', id).replace('#NAMETABLE', name);
+    var tableSQL = new SqlTable().byJson(tableData);
+    var rowSQL = new SqlRow();
 
-		sqlCanvas.append(htmlTemp);
+    var rowId = rowsCanvas.children().size() + 1;
+    
+    rowSQL.setId(rowId);
+    rowSQL.setNameRow("New Row");
+    tableSQL.addRow(rowSQL);
 
-		$('#' + id).offset({
-			top : centerT,
-			left : centerL
-		});
+    $('#' + tableId + ' > .sql-table-data').html(JSON.stringify(tableSQL));
+    
+    var newRowHtmlTmp = newRowHtml.replace('#ID', rowId).replace('#IDTABLE', tableId);
+    
+    rowsCanvas.append(newRowHtmlTmp);
 
-		$('#' + id).draggable({
-			snap : true,
-			grid : [10, 10]
-		});
-
-		var table = new SqlTable();
-		table.setId(id);
-		table.setNameTable(name);
-
-		$('#' + id + ' > .sql-table-data').append(JSON.stringify(table));
-		listTableObj.push(table);
-	});
-
-	sqlCanvas.live('click', function(event) {
-		unselectTables();
-
-		// adiciona cor de destaque na tabela em uso
-		/*
-		 if (event.srcElement.id != 'sql-canvas') {
-		 $('#'+event.srcElement.id).addClass('sql-table-selected');
-		 }
-		 */
-	});
-
-	$('.sql-table').live('mousedown', function() {
-		unselectTables();
-
-		$(this).addClass('sql-table-selected');
-	});
-
-	$('.sql-table-title-close').live('click', function() {
-		$($(this).parent()).parent().remove();
-	});
-
-	$('.sql-table-add-row').live('click', function() {
-		var table = $($($(this).parent()));
-		var tableId = table.attr('id');
-
-		var rowsCanvas = $('#' + tableId + ' > .sql-table-rows');
-		var tableData = getDataFromTable(tableId);
-		tableData = eval('(' + tableData + ')');
-
-		var tableSQL = new SqlTable().byJson(tableData);
-
-		rowsCanvas.append(newRowHtml);
-	});
+    $('.fd-text-row').fdText(function(slt) {
+        //console.log(slt);
+    }, function(slt) {
+        // pegar row pelo index
+        var table = $(slt).parent().parent().parent();
+        var data = getDataFromTable (table[0].id);        
+        
+        for (var i = 0, length = data.rows.length; i < length; i++) {           
+            if (data.rows[i].id == rowId) {
+                data.rows[i].nameRow = $(slt).html();
+            }
+        }  
+        
+        // pegar o json da tabela, e atualizar o valor da coluna alterada 
+       
+        $('#' + table[0].id +' > .sql-table-data').html(JSON.stringify(data));
+    });
+});
 
 })(jQuery); 
