@@ -1,0 +1,22 @@
+body, select, input, textarea {
+font-family:sans-serif;
+font-size:62.5%; 
+}
+
+body {
+background-color:#db6;
+}
+
+#navegation{
+background-color:#7af;
+font-size: 1.4em;
+}
+
+#loader{
+color:#fff;
+font-size: 1.2em;
+}
+
+.link {
+color:#333;
+}
