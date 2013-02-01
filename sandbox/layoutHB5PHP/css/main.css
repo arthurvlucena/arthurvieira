@@ -1,0 +1,512 @@
+/*
+
+ASSISTIR
+http://www.infoq.com/br/presentations/tonelada-truques-web
+http://www.infoq.com/br/presentations/lean-startup-trincheiras
+
+*/
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+body{
+font-family:'bariol_regularregular';
+background-image:url('http://arthurvieira.com/images/background.png');
+font-size:62.5%;
+-webkit-font-smooth:always; 
+}
+#nav {
+}
+#logo { 
+}
+#cont { 
+color:crimson;  
+position:relative;
+}
+.background-translucent{
+position:absolute;  
+top:0; /* Add a top and bottom position so the element */  
+bottom:0; /* stretches to the height of the parent */  
+left:0;  
+width:100%;  
+opacity:0.2;
+background-color:#666;
+}
+.text-opaque{
+position: relative;  
+width:100%;   
+}
+#social {
+font-size:2em;   
+position:relative;
+border-top:crimson solid 2px;
+text-shadow: 1px 1px #777;
+}
+.social-bt{
+-webkit-transition:background-color 0.5s;
+opacity:0.7;
+}
+.social-bt:hover{
+opacity:1;
+background-color:crimson;    
+}
+.xm-bt{
+width:112px;
+padding:5px;
+margin:5px;
+float:left;
+background-color:#666;
+color:white;
+-webkit-transition:background-color 1s;
+opacity:0.3;
+}
+.xm-bt:hover{
+opacity:1;
+}
+#xm-bt-home:hover{
+background-color:crimson;    
+}
+#xm-bt-contact:hover{
+background-color:limegreen;    
+}
+#xm-bt-work:hover{
+background-color:dodgerblue;    
+}
+#xm-bt-bio:hover{
+background-color:darkorange;    
+}
+.xm-bt-img{
+display:block;
+margin:0 auto;
+height:82px;
+width:82px;
+}
+.xm-bt-sub{
+display:block;
+font-size:3.2em;
+color:white;
+text-align:center;
+}
+
+/*
+ *
+ * FORM STYLE 
+ *
+ */
+.form-label{
+font-size:1.7em;
+} 
+ 
+
+form {
+    padding:15px;
+    /*border:1px solid #ddd;*/
+}
+/*input / textarea*/
+input[type=text], textarea {
+    font: 1.5em 'bariol_regularregular', sans-serif;
+    color: #666;
+    padding:3px;
+    border:1px solid #ddd;
+    background-color:#fafafa;
+    outline: none;
+    /*css3*/
+    border-radius:3px;
+    -moz-border-radius:3px;
+    -khtml-border-radius:3px;
+    box-shadow:inset 1px 1px 1px #aaa;
+    -moz-box-shadow:inset 1px 1px 1px #aaa;
+    -khtml-box-shadow:inset 1px 1px 1px #aaa;
+}
+textarea:hover, input[type=text]:hover {
+    border-color:#c5c5c5;
+    background:#f4f4f4;
+}
+textarea:focus, input[type=text]:focus {
+    border-color:#999;
+    background:#f4f4f4;
+}
+input[type=text]:disabled, textarea:disabled {
+    border-color:#cfcfcf;
+    background-color:#efefef;
+    color:#999;
+    /*css3*/
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -khtml-box-shadow:none;
+}
+/*textarea*/ 
+textarea {
+    resize:none;
+    overflow:auto;
+}
+/*button*/
+input[type=button], input[type=submit]{
+    font:600 1.5em 'bariol_regularregular', sans-serif;
+    letter-spacing:0px;
+    line-height:14px;
+    color:#888;
+    border:1px solid #bbb;
+    background-color:#ddd;
+    padding:4px;
+    text-align: center;
+    outline: none;
+    /*css3*/
+    text-shadow:#fff 1px 0px 0px;
+    -moz-text-shadow:#fff 2px 0px 0px;
+    -khtml-text-shadow:#fff 2px 0px 0px;
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -khtml-border-radius:5px;
+    box-shadow:inset 1px 1px 3x #fff;
+    -moz-box-shadow:inset 1px 1px 3px #fff;
+    -khtml-box-shadow:inset 1px 1px 3px #fff;
+    transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -khtml-transition: all 0.25s linear;
+}
+input[type=button]:hover:enabled, input[type=submit]:hover:enabled {
+    color:#333;
+    border-color:#888;
+    background-color:#e5e5e5;
+    box-shadow:0 1px 1px rgba(0,0,0,0.1);
+}
+input[type=button]:disabled, input[type=submit]:disabled {
+    border-color:#aaa;
+    background-color:#ccc;
+}
+input[type=button]:hover:enabled, input[type=submit]:hover:enabled/*, input[type=button]:focus:enabled*/ {
+    color: #555;
+    /*css3*//*
+    box-shadow:inset 1px 1px 1px #555;
+    -moz-box-shadow:inset 1px 1px 1px #555;
+    -khtml-box-shadow:inset 1px 1px 1px #555;*/
+}
+input[type=button]:disabled {
+    color:#aaa;
+}
+/*number*/
+
+/*file*/
+
+/*label*/
+label {
+    font-size:1.4em;
+}
+/*select*/
+select {
+    font:1.3em 'bariol_regularregular', sans-serif;
+    color:#666;
+    border:1px solid #c5c5c5;
+    background:#f4f4f4;
+    outline: none;
+    /*css3*/
+    border-radius:2px;
+    -moz-border-radius:2px;
+    -khtml-border-radius:2px;
+}
+select:disabled {
+    color:#aaa;
+    border-color:#ddd;
+    background-color:#ededed;
+}
+/*option*/
+option {
+    font:1.3em 'bariol_regularregular', sans-serif;
+    color:#666;
+}
